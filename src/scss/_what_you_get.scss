@@ -1,0 +1,128 @@
+@import "./\ variables";
+@import "./mixins";
+
+.what-you-get{
+    @media(min-width:993px){
+        background: #F4F4F4;
+    }
+}
+.you-get{
+    @include section-header;
+    font-size: 32px;
+    line-height: 38px;
+    color: #8D81AC;
+    text-align: center;
+    width: 77%;
+    margin: 0 auto 36px auto;
+    @media(min-width:481px){
+        font-size: 42px;
+        line-height: 44px;
+        margin-bottom: 50px;
+        grid-area: header;
+    }
+    @media(min-width:993px){
+        text-align: start;
+        margin-bottom: 0;
+    }
+} 
+
+.examples{
+    width: 80%;
+    margin: auto;
+    grid-area: examples;
+    @media(min-width:993px){
+        margin-top: 0; 
+    }
+}
+
+.first__examples{
+    @include flex-center;
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+    @media(min-width:481px){
+        display: grid;
+        grid-template-columns: 111px 1fr;
+        justify-items: center;
+        column-gap: 23px;
+        margin-bottom: 58px;
+    }
+    @media(min-width:993px){ 
+        margin-bottom: 38px;
+    }
+    &--img{
+        margin-bottom: 23px;
+        @media(min-width:481px){
+            margin-bottom: 0;
+        }
+    }
+    &--header{
+        @include small-header;
+        font-size: 16px;
+        line-height: 16px;
+        color: #323232;
+        text-align: center;
+        margin-bottom: 14px;
+        @media(min-width:481px){
+            line-height: 21px;
+            text-align: start;
+        }
+    }
+    &--description{
+        @include description;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: #848E97;
+        @media(min-width:481px){
+            text-align: start;
+        }
+
+    }
+}
+
+.img-code{
+    display: flex;
+    justify-content: flex-end;
+    @media(min-width:993px){
+        display: inline-block;
+    }
+   
+    &__second{
+        display: none;
+    }
+    @media(min-width:481px){
+        &__first{
+            display: none;
+        }
+        &__second{
+            display: inline-block;
+            width: 80%;
+        }
+    }
+    @media(min-width:993px){
+        &__second{
+            display: inline-block;
+            grid-area: photo;
+            width: 100%;
+        }
+    }
+}
+
+ .grid-you-get{
+    @media(min-width:993px){ 
+        margin: auto;
+        max-width: 1200px;
+        padding-top: 98px;
+        padding-bottom: 33px;
+        width: 100%;
+        display: grid;
+        column-gap: 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "examples header"
+        "examples photo"
+        "examples photo";
+    }
+   
+
+} 

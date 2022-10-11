@@ -1,0 +1,102 @@
+@import "./\ variables";
+@import "./mixins";
+
+.container{
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.revolutionary{
+    @include section-header;
+    font-size: 26px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #635C73; 
+    text-align: center;
+    margin-bottom: 27px;
+    @media(min-width:481px){
+        font-size: 42px;
+        line-height: 42px;
+        margin-bottom: 33px;
+    }
+    @media(min-width:993px){
+        font-size: 54px;
+        line-height: 54px;
+        margin-bottom: 35px;
+    }
+}
+
+.revolutionary-description{
+    @include description;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #323232;
+    text-align: center;
+    margin-bottom: 36px;
+    @media(min-width:481px){
+        font-size: 21px;
+        line-height: 32px;
+    }
+    @media(min-width:993px){
+        width: 85%;
+        margin: auto;
+    }
+}
+
+button{
+    border: none;
+	background-color:white;
+    border: 1px solid  rgb(227, 227, 227);
+    border-radius: 6px;
+   
+} 
+
+
+.btns__first{
+    @include flex-center;
+    margin-bottom: 20px;
+}
+
+.btns__first--number{
+    background-color: rgb(202, 202, 202);
+    border-radius: 2em;
+    padding: 0 6px; 
+}
+
+.btns__first--watch{
+   @include btn-style; 
+   margin-right: 5px;
+}
+
+.btns__first--fork{
+    @include btn-style; 
+}
+
+.btns__second{
+    @include flex-center;
+    @media(min-width:481px){
+        display: inline-block;
+        margin-left: 5px;
+    } 
+    &--star{
+        @include btn-style; 
+    }  
+} 
+
+
+
+.btns{
+    margin-bottom: 120px;
+    @media(min-width:481px){
+        display: flex;
+        justify-content: center;
+        margin-bottom: 160px;
+    }
+    @media(min-width:993px){
+        margin-top: 13px;
+        margin-bottom: 70px;
+    }
+}
+

@@ -1,0 +1,91 @@
+@mixin section-header{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700; 
+}
+
+@mixin small-header{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin description {
+    font-family: 'Lato'; 
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin description-italic{
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 700;
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btn-style{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 120px;
+} 
+
+@mixin background {
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+//breakpoints
+
+@media (min-width: 62em) {}
+
+//481px, 993px
+$breakpoints-up: (
+    'medium': '30.0625em',
+    'large': '62.0625em'
+);
+
+//480, 992px
+$breakpoints-down: (
+    'small': '30em',
+    'medium': '62em'
+);
+
+@mixin breakpoint-up($size) {
+    @media(min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media(max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+
+@mixin before {
+    content: '';
+    position: absolute;
+    background-color: $lightpink;
+    display: block;
+    width: 0.5rem;
+    height: 3.31rem;  
+}
+
+
+@mixin adaptive-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7 ;
+    @media (max-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / 1280));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / 1280));       
+    }
+}
+ 

@@ -1,0 +1,145 @@
+@import "./\ variables";
+@import "./mixins";
+body{
+    min-width: 320px; 
+} 
+
+.main {
+    background: url('../img/canion.png') left 50% bottom 87%/cover no-repeat border-box;
+    background-color: #4b3b4e;
+    &__slogan {
+        color: white;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        @include adaptive-font(48, 36);
+    }
+
+    &__final-text {
+        width: 80%;
+        color: $midpink;
+        text-align: center;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        margin: 0 auto;
+        padding-bottom: 1.25rem;
+        font-size: $font-sm;
+    }
+}
+
+.main__slogan {
+    @include breakpoint-up(medium) {
+        padding-top: 5.43rem;
+        margin-bottom: 5.5rem;
+    }
+}
+
+.main__slogan {
+    @include breakpoint-up(large) {
+        padding-top: 6.75rem;
+        margin-bottom: 5.25rem;
+    }
+}
+
+.main__slogan {
+    @include breakpoint-down(small) {
+        padding-top: 3.56rem;
+        margin-bottom: 3.3125rem;
+    }
+    
+}
+.main__line {
+    display: block;
+    width: 70%;
+    height: 3px;
+    margin: 0 auto;
+    background-color: $halftransparent;
+}
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 270px;
+        margin-bottom: 2.8125rem;
+    }
+
+    &__link-img {
+        margin-bottom: 2.06rem;
+    }
+
+    &__link-text {
+        color: $white;
+        font-size: 16px;
+        font-family: 'Lato';
+        font-style: italic;
+        text-align: center;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .tnw {
+        margin-bottom: 2.3125rem;
+    }
+}
+
+.smashing {
+    grid-area: smashing;
+}
+
+.codrops {
+    grid-area: codrops;
+}
+
+.w-partner {
+    grid-area: w-partner;
+}
+
+.pixel-buddha {
+    grid-area: pixel;
+}
+
+.creative-bloq {
+    grid-area: bloq;
+}
+
+.tnw {
+    grid-area: tnw;
+}
+
+
+.partners {
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: center;
+        column-gap: 3.93rem;
+        row-gap: 0.8125rem;
+        margin-bottom: 4.28rem;
+        grid-template-areas:
+            'smashing codrops'
+            'w-partner pixel'
+            'bloq tnw';
+
+    }
+}
+
+.partners {
+    @include breakpoint-up(large) {
+        display: grid;
+        justify-content: center;
+        column-gap: 5.43rem;
+        row-gap: 4.43rem;
+        margin-bottom: 7.5rem;
+        grid-template-areas:
+            'smashing codrops w-partner'
+            'pixel bloq tnw';
+    }
+}

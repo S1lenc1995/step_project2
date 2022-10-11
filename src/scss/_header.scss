@@ -1,0 +1,382 @@
+@import "./\ variables";
+@import "./mixins";
+
+img {
+    max-width: 100%;
+}
+
+
+
+.max-width {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.fork-app {
+    background: url('../img/laptop.png') left 50% bottom 87%/cover no-repeat border-box;
+    position: relative;
+    height: 44.875rem;
+
+    &__nameApp {
+        font-weight: 700;
+        font-family: 'Montserrat';
+        font-style: normal;
+        text-align: center;
+        color: $white;
+        margin-top: 8vh;
+        @include adaptive-font(72, 38);
+
+    }
+
+
+    &__slogan {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        color: $lightpink;
+        margin-top: 1.25rem;
+        margin-left: 3%;
+        margin-right: 3%;
+        @include adaptive-font (25, 14)
+    }
+
+    &__version {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        color: $grey;
+        text-align: center;
+        margin-top: 1rem;
+        @include adaptive-font (14, 14);
+    }
+
+
+    &__btnInst {
+        text-decoration: none;
+        @include adaptive-font (21, 18);
+        border: 1px solid $lightpink;
+        background-color: $lightpink;
+        color: $white;
+        padding: 13px 29px;
+        border-radius: 40px;
+        position: absolute;
+        bottom: -3%;
+        transition: color 200ms ease-in-out;
+
+
+        &:hover {
+            color: $lightpink;
+            background-color: $white;
+        }
+    }
+
+}
+
+
+.flex-btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+.header {
+    background-color: $darkgrey;
+    z-index: 2;
+
+    nav {
+        position: sticky;
+        padding: 2rem 1rem;
+    }
+
+    &__logo {
+        display: flex;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        .logo-name {
+            padding-top: 8px;
+            margin-left: 17px;
+            color: $lightpink;
+            font-size: $font-ut;
+            font-family: 'Lato';
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    &__menu {
+        margin-top: 10px;
+
+        //mobile menu
+        >span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $white;
+            transition: all 300ms ease-in-out;
+            transform-origin: 2px -6.5px;
+
+            &:first-child {
+                width: 15px;
+                margin-left: 11px;
+            }
+
+
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+        }
+
+    }
+
+    .open {
+
+        >span:first-child {
+            transform: rotate(45deg);
+        }
+
+        >span:nth-child(2) {
+            opacity: 0;
+        }
+
+        >span:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 7.5rem;
+
+        a {
+            text-decoration: none;
+            font-size: $font-med;
+            color: $lightpink;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: $font-med;
+            margin-right: 47px;
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+    }
+}
+
+#overlay {
+    display: flex;
+    position: absolute;
+    width: 91.25%;
+    min-height: 379px; //61%
+    background-color: rgb(0, 0, 0, 0);
+    top: 6.43rem;
+    transition: all 0.5s ease-in-out;
+    flex-direction: column;
+    clip-path: circle(30px at 65.5% 5.3%);
+
+    a {
+        text-decoration: none;
+        color: $white;
+        position: relative;
+        font-size: 1.625rem;
+        padding: 36px 0px 26px 35px;
+        border-bottom: 2px solid gray;
+    }
+
+}
+
+#overlay.menu {
+    background-color: $lightGrey;
+    clip-path: circle(120vh at 65.5% 5.3%)
+}
+
+.active-menu {
+    color: $lightpink  !important;
+}
+
+.active-line::before {
+    @include before;
+    top: 22px;
+    left: 2px;
+}
+
+
+.header__links-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.125rem;
+
+    a {
+        text-decoration: none;
+        color: $lightpink;
+        padding-left: 47px;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: $font-med;
+    }
+
+    &:last-child {
+        padding-right: 46px;
+    }
+
+    &:not(:last-child) {
+        padding-left: 46px;
+    }
+
+}
+
+.flex {
+    display: flex;
+    position: relative;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.btn-buy {
+    box-sizing: border-box;
+    background-color: $lightpink;
+    padding: 0.6875rem 1.9rem;
+    color: $white;
+    border: 1px solid $lightpink;
+    border-radius: 40px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-mid;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+        color: $lightpink;
+        background-color: $white;
+    }
+}
+
+.text-underBtn {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: $greyPinc;
+}
+
+.text-underBtn {
+    @include breakpoint-up (medium) {
+        padding-top: 50px;
+        padding-bottom: 94px;
+    }
+}
+
+.text-underBtn {
+    @include breakpoint-up (large) {
+        padding-top: 54px;
+        padding-bottom: 66px;
+    }
+}
+
+
+.hide-for-mobile {
+    @include breakpoint-down(small) {
+        display: none;
+    }
+}
+
+.hide-for-mobile-down {
+    @include breakpoint-down(small) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+}
+
+.hide-for-mobile-down {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-up(large) {
+        display: flex;
+    }
+}
+
+.logo-name {
+    @include breakpoint-down(small) {
+        display: none;
+    }
+}
+
+
+.hide-for-mobile-down a {
+    @include breakpoint-up(medium) {
+        font-size: $font-ms;
+    }
+}
+
+@media(min-width: 581px) {
+    .hide-for-mobile-down a {
+        font-size: $font-med;
+    }
+}
+
+
+.hide-menu-for-desktop {
+    @include breakpoint-up(medium) {
+        visibility: hidden;
+    }
+}
+
+.header {
+    @include breakpoint-up(large) {
+        background-color: rgb(0, 0, 0, 0);
+    }
+}
+.fork-app__nameApp {
+    @include breakpoint-up(large) {
+        font-size: 82px;
+        margin-top: 68px;
+    }
+}
+.fork-app__slogan {
+    @include breakpoint-up (large) {
+        font-size: 30px;
+    }
+}
+.fork-app__version {
+    @include breakpoint-up (large) {
+        font-size: 16px;
+    }
+}
